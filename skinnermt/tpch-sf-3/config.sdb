@@ -1,0 +1,7 @@
+PARALLEL_ALGO=HP-A
+NR_WARMUP=1
+NR_EXECUTORS=1
+NR_BATCHES=120
+WRITE_RESULTS=false
+THREADS=1
+JNI_PATH=/home/pei/skinnerdb/skinnermt/Filter/jniFilter.so

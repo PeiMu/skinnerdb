@@ -12,10 +12,14 @@ if [ $BENCH == "imdb" ]
 then
     DIR=imdb
     RES=imdb
-elif [ $BENCH == "tpch" ]
+elif [ $BENCH == "tpch-10" ]
 then
     DIR=tpch-sf-10
-    RES=tpchx
+    RES=tpch-sf-10
+elif [ $BENCH == "tpch-3" ]
+then
+    DIR=tpch-sf-3
+    RES=tpch-sf-3
 else
     DIR=jcch-sf-10
     RES=jcchx
@@ -50,7 +54,7 @@ else
     GCCOMMAND=""
 fi
 
-for t in 1 4 8 12 16 20 24 
+for t in 1 4 8 12 16 20 24
 do    
     for i in `seq 1 $RUNS`
     do
