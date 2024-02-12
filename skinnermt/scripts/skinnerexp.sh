@@ -50,7 +50,7 @@ else
     GCCOMMAND=""
 fi
 
-for t in 4 8 12 16 20 24 
+for t in 1 4 8 12 16 20 24 
 do    
     for i in `seq 1 $RUNS`
     do
