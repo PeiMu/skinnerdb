@@ -8,7 +8,11 @@ RES=imdb
 MEM=200
 SKINNER_DIR=/home/pei/skinnerdb/skinnermt
 GCOPTION=G1
-if [ $BENCH == "imdb" ]
+if [ $BENCH == "imdb_s" ]
+then
+    DIR=imdb_s
+    RES=imdb_s
+elif [ $BENCH == "imdb" ]
 then
     DIR=imdb
     RES=imdb
@@ -20,6 +24,10 @@ elif [ $BENCH == "tpch-3" ]
 then
     DIR=tpch-sf-3
     RES=tpch-sf-3
+elif [ $BENCH == "test" ]
+then
+    DIR=test
+    RES=test
 else
     DIR=jcch-sf-10
     RES=jcchx
