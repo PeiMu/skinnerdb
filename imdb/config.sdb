@@ -1,0 +1,7 @@
+PARALLEL_ALGO=DP
+NR_WARMUP=1
+NR_EXECUTORS=1
+NR_BATCHES=120
+WRITE_RESULTS=false
+THREADS=20
+JNI_PATH=/home/ubuntu/skinnermt/Filter/jniFilter.so
