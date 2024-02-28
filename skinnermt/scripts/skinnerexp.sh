@@ -4,9 +4,10 @@ BENCH=$2
 ALGO=$3
 DIR=imdb
 RES=imdb
+QUERIES=imdb
 # Replace these two variables for your customized experiments
 MEM=200
-SKINNER_DIR=/home/pei/skinnerdb/skinnermt
+SKINNER_DIR=/home/pei/Project/skinnerdb/skinnermt
 GCOPTION=G1
 if [ $BENCH == "imdb_s" ]
 then
@@ -16,6 +17,7 @@ elif [ $BENCH == "imdb" ]
 then
     DIR=imdb
     RES=imdb
+    QUERIES=/home/pei/benchmarks/imdb_job-postgres/skinnerdb_queries
 elif [ $BENCH == "tpch-10" ]
 then
     DIR=tpch-sf-10
@@ -24,6 +26,7 @@ elif [ $BENCH == "tpch-3" ]
 then
     DIR=tpch-sf-3
     RES=tpch-sf-3
+    QUERIES=/home/pei/benchmarks/tpch-postgre/dbgen/out/skinner_pure_queries
 elif [ $BENCH == "test" ]
 then
     DIR=test
@@ -67,7 +70,7 @@ do
     for i in `seq 1 $RUNS`
     do
         echo "Benchmarking $BENCH optimal #$i"
-        COMMAND="bench ${SKINNER_DIR}/${DIR}/queries ./${RES}-${ALGO}-${t}_${i}.txt"
+        COMMAND="bench ${QUERIES} ./${RES}-${ALGO}-${t}_${i}.txt"
         echo $COMMAND
         echo -ne "$COMMAND\nquit\n" | java -jar ${GCCOMMAND} -Xmx${MEM}G -Xms${MEM}G Skinner.jar ${PREFIX} $t
     done

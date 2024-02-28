@@ -4,4 +4,4 @@ NR_EXECUTORS=1
 NR_BATCHES=120
 WRITE_RESULTS=false
 THREADS=20
-JNI_PATH=/home/pei/skinnerdb/skinnermt/Filter/jniFilter.so
+JNI_PATH=/home/pei/Project/skinnerdb/skinnermt/Filter/jniFilter.so
