@@ -1,0 +1,177 @@
+9d.sql
+SELECT MIN(an.name) AS alternative_name, MIN(chn.name) AS voiced_char_name, MIN(n.name) AS voicing_actress, MIN(t.title) AS american_movie FROM aka_name AS an, char_name AS chn, cast_info AS ci, company_name AS cn, movie_companies AS mc, name AS n, role_type AS rt, title AS t WHERE ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)') AND cn.country_code = '[us]' AND n.gender = 'f' AND rt.role = 'actress' AND ci.movie_id = t.id AND t.id = mc.movie_id AND ci.movie_id = mc.movie_id AND mc.company_id = cn.id AND ci.role_id = rt.id AND n.id = ci.person_id AND chn.id = ci.person_role_id AND an.person_id = n.id AND an.person_id = ci.person_id
+[WARNING] 
+java.lang.NoClassDefFoundError: expressions/compilation/KnaryBoolEval
+    at java.lang.ClassLoader.defineClass1 (Native Method)
+    at java.lang.ClassLoader.defineClass (ClassLoader.java:756)
+    at java.lang.ClassLoader.defineClass (ClassLoader.java:635)
+    at expressions.compilation.DynamicClassLoader.defineClass (DynamicClassLoader.java:5)
+    at expressions.compilation.ExpressionCompiler.getBoolEval (ExpressionCompiler.java:743)
+    at joining.join.MultiWayJoin.<init> (MultiWayJoin.java:105)
+    at joining.join.OldJoin.<init> (OldJoin.java:75)
+    at joining.JoinProcessor.process (JoinProcessor.java:81)
+    at benchmark.BenchAndVerify.main (BenchAndVerify.java:104)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+    at java.lang.Thread.run (Thread.java:750)
+Caused by: java.lang.ClassNotFoundException: expressions.compilation.KnaryBoolEval
+    at java.lang.ClassLoader.findClass (ClassLoader.java:523)
+    at java.lang.ClassLoader.loadClass (ClassLoader.java:418)
+    at java.lang.ClassLoader.loadClass (ClassLoader.java:351)
+    at java.lang.ClassLoader.defineClass1 (Native Method)
+    at java.lang.ClassLoader.defineClass (ClassLoader.java:756)
+    at java.lang.ClassLoader.defineClass (ClassLoader.java:635)
+    at expressions.compilation.DynamicClassLoader.defineClass (DynamicClassLoader.java:5)
+    at expressions.compilation.ExpressionCompiler.getBoolEval (ExpressionCompiler.java:743)
+    at joining.join.MultiWayJoin.<init> (MultiWayJoin.java:105)
+    at joining.join.OldJoin.<init> (OldJoin.java:75)
+    at joining.JoinProcessor.process (JoinProcessor.java:81)
+    at benchmark.BenchAndVerify.main (BenchAndVerify.java:104)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+    at java.lang.Thread.run (Thread.java:750)
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-57,5,benchmark.BenchAndVerify] was interrupted but is still alive after waiting at least 14999msecs
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-57,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-114,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-43,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-100,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-29,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-86,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-15,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-72,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-58,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-1,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-115,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-44,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-101,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-30,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-87,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-16,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-2,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-59,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-73,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-116,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-45,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-102,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-31,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-88,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-17,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-74,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-3,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-60,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-117,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-46,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-103,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-32,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-89,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-18,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-75,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-4,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-61,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-118,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-47,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-104,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-33,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-90,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-19,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-76,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-5,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-62,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-119,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-48,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-105,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-34,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-91,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-20,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-77,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-6,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-63,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-120,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-49,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-106,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-92,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-21,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-78,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-7,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-121,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-64,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-50,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-107,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-36,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-93,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-22,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-79,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-8,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-122,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-51,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-108,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-94,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-37,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-23,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-80,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-9,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-66,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-123,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-52,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-109,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-95,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-24,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-81,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-10,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-67,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-124,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-53,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-110,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] thread Thread[ForkJoinPool.commonPool-worker-39,5,benchmark.BenchAndVerify] will linger despite being asked to die via interruption
+[WARNING] NOTE: 92 thread(s) did not finish despite being asked to  via interruption. This is not a problem with exec:java, it is a problem with the running code. Although not serious, it should be remedied.
+[WARNING] Couldn't destroy threadgroup org.codehaus.mojo.exec.ExecJavaMojo$IsolatedThreadGroup[name=benchmark.BenchAndVerify,maxpri=10]
+java.lang.IllegalThreadStateException
+    at java.lang.ThreadGroup.destroy (ThreadGroup.java:778)
+    at org.codehaus.mojo.exec.ExecJavaMojo.execute (ExecJavaMojo.java:321)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:283)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:226)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:407)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:348)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:58 min
+[INFO] Finished at: 2024-02-28T11:57:28Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project mcts_db_tests: An exception occured while executing the Java class. expressions/compilation/KnaryBoolEval: expressions.compilation.KnaryBoolEval -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
