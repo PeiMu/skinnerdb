@@ -15,16 +15,16 @@ elif [ $BENCH == "imdb" ]
 then
     DIR=imdbskinner/skinnerimdb
     RES=imdb
-    QUERIES=/home/pei/benchmarks/imdb_job-postgres/skinnerdb
+    QUERIES=/home/pei/Project/benchmarks/imdb_job-postgres/skinnerdb_queries/
 elif [ $BENCH == "tpch-10" ]
 then
     DIR=tpch-sf-10
     RES=tpch-sf-10
-elif [ $BENCH == "tpch-3" ]
+elif [ $BENCH == "tpch-1" ]
 then
     DIR=tpch
-    RES=tpch-3
-    QUERIES=/home/pei/benchmarks/tpch-postgre/dbgen/out/skinner_pure_queries
+    RES=tpch-1
+    QUERIES=/home/pei/Project/benchmarks/tpch-postgres/dbgen/out/skinner_pure_queries/
 elif [ $BENCH == "test" ]
 then
     DIR=test
