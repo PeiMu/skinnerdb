@@ -25,6 +25,11 @@ then
     DIR=tpch
     RES=tpch-1
     QUERIES=/home/pei/Project/benchmarks/tpch-postgres/dbgen/out/skinner_pure_queries/
+elif [ $BENCH == "jcch-1" ]
+then
+    DIR=jcch
+    RES=jcch-1
+    QUERIES=/home/pei/Project/benchmarks/JCC-H/out/skinner_pure_queries/
 elif [ $BENCH == "test" ]
 then
     DIR=test
